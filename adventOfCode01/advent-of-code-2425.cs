@@ -3,6 +3,7 @@ using System;
 string input;
 int[] list1 = new int[6];
 int[] list2 = new int[6];
+int sum = 0;
 
 
 Console.WriteLine("Enter first List");
@@ -25,9 +26,9 @@ Array.Sort(list1);
 Array.Sort(list2);
 
 Console.WriteLine("Sorted:");
-Console.WriteLine($"|{list1[0]} - {list2[0]}| = {Math.Abs(list1[0] - list2[0])}");
-Console.WriteLine($"|{list1[1]} - {list2[1]}| = {Math.Abs(list1[1] - list2[1])}");
-Console.WriteLine($"|{list1[2]} - {list2[2]}| = {Math.Abs(list1[2] - list2[2])}");
-Console.WriteLine($"|{list1[3]} - {list2[3]}| = {Math.Abs(list1[3] - list2[3])}");
-Console.WriteLine($"|{list1[4]} - {list2[4]}| = {Math.Abs(list1[4] - list2[4])}");
-Console.WriteLine($"|{list1[5]} - {list2[5]}| = {Math.Abs(list1[5] - list2[5])}");
+for (int i = 0; i < 6; i++)
+{
+    Console.WriteLine($"|{list1[i]} - {list2[i]}| = {Math.Abs(list1[i] - list2[i])}");
+    sum = sum + Math.Abs(list1[i] - list2[i]);
+}
+Console.WriteLine($"Difference = {sum}");
